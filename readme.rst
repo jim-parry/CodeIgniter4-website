@@ -59,7 +59,7 @@ Project Folders
 
 /application    the obvious
 /public         the served face of the website
-    /assets     CSS, javascript & media
+/public/assets  CSS, javascript & media
 /data           zipped files for downloading, avatars
 
 

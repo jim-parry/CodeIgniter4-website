@@ -1,10 +1,10 @@
 {
-    "description": "The CodeIgniter Website",
+    "description": "The CodeIgniter4 Website",
     "homepage": "https://codeigniter.com",
-    "name": "bcit-ci/codeigniter-website",
+    "name": "bcit-ci/CodeIgniter4-website",
     "license": "MIT",
     "config": {
-      "vendor-dir": "application/vendor"
+      "vendor-dir": "vendor"
     },
     "require": {
         "php": ">=5.3.2",
