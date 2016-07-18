@@ -1,21 +1,17 @@
-##################################
-Migrating From CI3 to CI4 - Part 2
-##################################
+##################################################
+Migrating From CI3 to CI4 - Part 2 - Confuguration
+##################################################
 
 We have a CodeIgniter4 website project, cloned locally and setup with the 
 framework's splashpage and a few of our assets. It is time to start converting in earnest.
-
-====================
-Webapp Configuration
-====================
 
 There are several pieces to configure for CI4, and they differ from the 
 configuration in CI3. Here are the pieces we want to worry about...
 
 Main Configuration
-------------------
+==================
 
-The CI3 website stored menu configuration in **applicaiton/config/config.php**::
+The CI3 website stored menu configuration in **application/config/config.php**::
 
     // the menu basics (top navbar)
     $config['menu_choices'] = array(
@@ -68,7 +64,7 @@ Our CI4 equivalent goes into **application/Config/Config.php**::
 	);
 	public $stableVersion = '3.0.6';
 
-Notice that we are assigning properties of the **\Config\App** class, and not
+Notice that we are assigning properties of the **\\Config\\App** class, and not
 setting associative properties inside a **$config** variable.
 
 The CI3 site suppressed the **index.php** setting::
@@ -133,18 +129,18 @@ Those get reflected as properties in CI4::
 
 
 Configuration - Autoload
-------------------------
+========================
 
 Configuration - Constants
--------------------------
+=========================
 
 Configuration - Database
-------------------------
+========================
 
 Configuration - Routes
-----------------------
+======================
 
 Configuration - Services
-------------------------
+========================
 
 Ready? On to `Part 3 <./migration3.rst>`_.
