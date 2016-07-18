@@ -1,6 +1,7 @@
 <?php
-//namespace App\Libraries;
-//uses \Github\Client;
+namespace App\Libraries;
+
+use Github;
 
 class Github_api {
 
@@ -23,8 +24,8 @@ class Github_api {
 	 */
 	public function __construct()
 	{
-		$this->client = new \Github\Client(
-				new \Github\HttpClient\CachedHttpClient(array('cache_dir' => '/tmp/github-api-cache'))
+		$this->client = new Github\Client(
+				new\Github\HttpClient\CachedHttpClient(array('cache_dir' => '/tmp/github-api-cache'))
 		);
 	}
 

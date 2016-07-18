@@ -15,7 +15,9 @@ class Home extends Application {
 	{
 		parent::__construct(...$params);
 //		$this->github_api = new \App\Libraries\Github_api();;
-		$this->github_api = new Github_api();;
+//		$github = new Github_api();
+//		library('github_api');
+		$github = new \App\Libraries\Github_api();
 	}
 
 	//-------------------------------------------------------------

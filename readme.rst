@@ -13,6 +13,9 @@ We welcome issues and pull requests, to handle suggestions or corrections
 to the style or structure of the website. 
 We will be a bit more reserved with the content :-/
 
+The migration process, converting the CodeIgniter website from CodeIgniter3
+to CodeIgniter4, is explained, step by step, in ``<migration>``_.
+
 *****************
 Programming Style
 *****************
@@ -57,11 +60,19 @@ Appropriate comments are found in each of the controllers.
 Project Folders
 ***************
 
-/application    the obvious
-/public         the served face of the website
-/public/assets  CSS, javascript & media
-/data           zipped files for downloading, avatars
+/application        the obvious
+/data               zipped files for downloading, avatars
+/public             the served face of the website
+/public/assets      CSS, javascript & media
+/public/user_guide  Symbolic link to the current CI user guide (v3)
+/public/userguide2  Placeholder for the CI2 user guide
+/public/userguide3  Placeholder for the CI3 user guide
+/tests              Provision for unit testing (not used)
+/writable           Writable folder for temporary files
 
+You may have noticed that there is no **system** folder. That is on purpose ...
+the website assumes that the CodeIgniter4 framework has been installed
+locally at the same level as the website project.
 
 *******
 License

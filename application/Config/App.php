@@ -13,25 +13,23 @@ class App extends BaseConfig
 	 */
 
 	// the menu basics (top navbar)
-	public $menuChoices = array(
-	'menudata' => array(
-	array('name' => '<span class="glyphicon glyphicon-home"></span>', 'link' => '/'),
-	array('name' => 'Download', 'link' => '/download'),
-	array('name' => 'Documentation', 'link' => '/docs'),
-	array('name' => 'Community', 'link' => '/community'),
-	array('name' => 'Contribute', 'link' => '/contribute')
-	)
+	public $menuChoices = array (
+		'menudata' => array (
+			array ('name' => '<span class="glyphicon glyphicon-home"></span>', 'link' => '/'),
+			array ('name' => 'Download', 'link' => '/download'),
+			array ('name' => 'Documentation', 'link' => '/docs'),
+			array ('name' => 'Community', 'link' => '/community'),
+			array ('name' => 'Contribute', 'link' => '/contribute')
+		)
 	);
-
 	// data for the footer navbar
-	public $footerChoices = array(
-	'menudata' => array(
-	array('name' => 'Policies', 'link' => '/help'),
-	array('name' => 'The Fine Print', 'link' => '/help/legal'),
-	array('name' => 'About', 'link' => '/help/about')
-	)
+	public $footerChoices = array (
+		'menudata' => array (
+			array ('name' => 'Policies', 'link' => '/help'),
+			array ('name' => 'The Fine Print', 'link' => '/help/legal'),
+			array ('name' => 'About', 'link' => '/help/about')
+		)
 	);
-
 	public $stableVersion = '3.0.6';
 
 	/*
@@ -42,9 +40,9 @@ class App extends BaseConfig
 	  | @mybb_news_usernames - An array of user names to restrict our search for news articles to. This simply helps limit the work to do.
 	  | @mybb_forum_url - The link to direct visitors to for our forum
 	 */
-	public $mybbNewsForum_id = 2;
-	public $mybbNewsUsernames = array('ciadmin', 'jlp', 'kilishan', 'Narf');
-	public $mybbForumURL = 'http://forum.codeigniter.com';
+	public $mybbNewsForum_id	 = 2;
+	public $mybbNewsUsernames	 = array ('ciadmin', 'jlp', 'kilishan', 'Narf');
+	public $mybbForumURL		 = 'http://forum.codeigniter.com';
 
 	/*
 	  |--------------------------------------------------------------------------
@@ -160,12 +158,12 @@ class App extends BaseConfig
 	  | except for 'cookie_prefix' and 'cookie_httponly', which are ignored here.
 	  |
 	 */
-	public $sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler';
-	public $sessionCookieName = 'ci_session';
-	public $sessionExpiration = 7200;
-	public $sessionSavePath = NULL;
-	public $sessionMatchIP = FALSE;
-	public $sessionTimeToUpdate = 300;
+	public $sessionDriver			 = 'CodeIgniter\Session\Handlers\FileHandler';
+	public $sessionCookieName		 = 'ci_session';
+	public $sessionExpiration		 = 7200;
+	public $sessionSavePath			 = NULL;
+	public $sessionMatchIP			 = FALSE;
+	public $sessionTimeToUpdate		 = 300;
 	public $sessionRegenerateDestroy = FALSE;
 
 	/*
@@ -183,11 +181,11 @@ class App extends BaseConfig
 	  |       'cookie_httponly') will also affect sessions.
 	  |
 	 */
-	public $cookiePrefix = '';
-	public $cookieDomain = '';
-	public $cookiePath = '/';
-	public $cookieSecure = false;
-	public $cookieHTTPOnly = false;
+	public $cookiePrefix	 = '';
+	public $cookieDomain	 = '';
+	public $cookiePath		 = '/';
+	public $cookieSecure	 = false;
+	public $cookieHTTPOnly	 = false;
 
 	/*
 	  |--------------------------------------------------------------------------
@@ -221,12 +219,12 @@ class App extends BaseConfig
 	  | CSRFRegenerate  = Regenerate token on every submission
 	  | CSRFExcludeURIs = Array of URIs which ignore CSRF checks
 	 */
-	public $CSRFProtection = false;
-	public $CSRFTokenName = 'csrf_test_name';
-	public $CSRFCookieName = 'csrf_cookie_name';
-	public $CSRFExpire = 7200;
-	public $CSRFRegenerate = true;
-	public $CSRFExcludeURIs = [];
+	public $CSRFProtection	 = false;
+	public $CSRFTokenName	 = 'csrf_test_name';
+	public $CSRFCookieName	 = 'csrf_cookie_name';
+	public $CSRFExpire		 = 7200;
+	public $CSRFRegenerate	 = true;
+	public $CSRFExcludeURIs	 = [];
 
 	/*
 	  |--------------------------------------------------------------------------
@@ -253,15 +251,15 @@ class App extends BaseConfig
 	  | NOT be displayed under production environments, and will only display if
 	  | CI_DEBIG is true, since if it's not, there's not much to display anyway.
 	 */
-	public $toolbarEnabled = (ENVIRONMENT != 'production' && CI_DEBUG);
-	public $toolbarCollectors = [
-	'CodeIgniter\Debug\Toolbar\Collectors\Timers',
-	'CodeIgniter\Debug\Toolbar\Collectors\Database',
-	'CodeIgniter\Debug\Toolbar\Collectors\Logs',
-	'CodeIgniter\Debug\Toolbar\Collectors\Views',
+	public $toolbarEnabled		 = (ENVIRONMENT != 'production' && CI_DEBUG);
+	public $toolbarCollectors	 = [
+		'CodeIgniter\Debug\Toolbar\Collectors\Timers',
+		'CodeIgniter\Debug\Toolbar\Collectors\Database',
+		'CodeIgniter\Debug\Toolbar\Collectors\Logs',
+		'CodeIgniter\Debug\Toolbar\Collectors\Views',
 //		'CodeIgniter\Debug\Toolbar\Collectors\Cache',
-	'CodeIgniter\Debug\Toolbar\Collectors\Files',
-	'CodeIgniter\Debug\Toolbar\Collectors\Routes',
+		'CodeIgniter\Debug\Toolbar\Collectors\Files',
+		'CodeIgniter\Debug\Toolbar\Collectors\Routes',
 	];
 
 	/*

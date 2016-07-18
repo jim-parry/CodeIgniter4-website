@@ -1,4 +1,6 @@
-<?php namespace Config;
+<?php
+
+namespace Config;
 
 require BASEPATH.'Config/AutoloadConfig.php';
 
@@ -11,8 +13,10 @@ require BASEPATH.'Config/AutoloadConfig.php';
  */
 class Autoload extends \CodeIgniter\Config\AutoloadConfig
 {
-	public $psr4 = [];
 
+	public $psr4 = [ 
+		'Github' => APPPATH.'../vendor/knplabs/github-api/lib/Github',
+	];
 	public $classmap = [];
 
 	//--------------------------------------------------------------------
@@ -50,9 +54,9 @@ class Autoload extends \CodeIgniter\Config\AutoloadConfig
 		 *   `];
 		 */
 		$psr4 = [
-			'Config'                     => APPPATH.'Config',
+			'Config'					 => APPPATH.'Config',
 			APP_NAMESPACE.'\Controllers' => APPPATH.'Controllers',
-			APP_NAMESPACE                => realpath(APPPATH),
+			APP_NAMESPACE				 => realpath(APPPATH),
 		];
 
 		/**
@@ -77,12 +81,11 @@ class Autoload extends \CodeIgniter\Config\AutoloadConfig
 		// Do Not Edit Below This Line
 		//--------------------------------------------------------------------
 
-		$this->psr4 = array_merge($this->psr4, $psr4);
-		$this->classmap = array_merge($this->classmap, $classmap);
+		$this->psr4		 = array_merge($this->psr4, $psr4);
+		$this->classmap	 = array_merge($this->classmap, $classmap);
 
 		unset($psr4, $classmap);
 	}
 
 	//--------------------------------------------------------------------
-
 }

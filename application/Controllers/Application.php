@@ -10,7 +10,7 @@ use CodeIgniter\HTTP\Response;
 class Application extends \CodeIgniter\Controller
 {
 
-	protected $data = array(); // parameters for view components
+	protected $data = array (); // parameters for view components
 	protected $id;   // identifier for our content
 
 	/**
@@ -22,14 +22,14 @@ class Application extends \CodeIgniter\Controller
 	{
 		parent::__construct(...$params);
 		$this->config					 = new \Config\App();
-		$this->data						 = array();
+		$this->data						 = array ();
 		$this->data['title']			 = 'CodeIgniter Web Framework';
 		$this->data['mybb_forum_url']	 = $this->config->mybbForumURL;
-		$this->errors					 = array();
+		$this->errors					 = array ();
 
 		//FIXME
-//		$this->load->library('Github_api');
-//		$this->load->driver('cache');
+//		library('Github_api');
+		$this->cache = \Config\Services::cache();
 
 		$this->response = new Response($this->config);
 
@@ -52,8 +52,8 @@ class Application extends \CodeIgniter\Controller
 	 */
 	function render()
 	{
-		if (!isset($this->data['pagetitle']))
-			$this->data['pagetitle'] = $this->data['title'];
+		if ( ! isset($this->data['pagetitle']))
+				$this->data['pagetitle'] = $this->data['title'];
 
 		// Massage the menubar
 		$choices = $this->config->menuChoices;
