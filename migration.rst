@@ -19,6 +19,7 @@ The CodeIgniter website makes a good migration usecase, because it has:
 -   a presentation theme
 
 It uses:
+
 -   Bootstrap & jQuery
 -   a mySQL database
 -   images stored inside the app
@@ -59,7 +60,8 @@ wherever that is on your platform::
 
     127.0.0.1 ci3.local ci.local ci4.local cisite.local
 
-for the CodeIgniter 3 website, the CodeIgniter 4 framework, and the 
+for the CodeIgniter 3 framework, the current CodeIgniter website, website, 
+the CodeIgniter 4 framework, and the 
 CodeIgniter 4 website.
 
 Using virtual hosting, you also need to enable that option in Apache, and
@@ -99,9 +101,9 @@ CodeIgniter4 spashpage at http://ci4.local, and an error message
 at http://cisite.local.
 
 
-******************
+==================
 Copy the Framework
-******************
+==================
 
 We made a conscious decision to keep the CodeIgniter website and the 
 framework separate. The framework is under active development, and
@@ -131,9 +133,9 @@ that within CodeIgniter4. You will change this at about line 40::
 Now, if you visit the site at http://cisite.local, you will see the 
 CodeIgniter4 splashpage.
 
-*****************
+=================
 Copy Static Parts 
-*****************
+=================
 
 We can copy some of the static parts over from the CodeIgniter3 folder, since
 they will not need modification.
@@ -152,3 +154,4 @@ The folder
 Now, if you visit the site at http://cisite.local, you will still only see the 
 CodeIgniter4 splashpage. We haven't migrated any of the website logic yet.
 
+Ready? On to `Part 2 <./migration2.rst>`_.

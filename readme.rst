@@ -14,7 +14,7 @@ to the style or structure of the website.
 We will be a bit more reserved with the content :-/
 
 The migration process, converting the CodeIgniter website from CodeIgniter3
-to CodeIgniter4, is explained, step by step, in ``<migration>``_.
+to CodeIgniter4, is explained, step by step, in this `writeup <./migration.rst>`_.
 
 *****************
 Programming Style
