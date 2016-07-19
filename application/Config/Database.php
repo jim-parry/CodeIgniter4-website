@@ -79,6 +79,35 @@ class Database extends \CodeIgniter\Database\Config
 		'saveQueries' => true,
 	];
 
+		/**
+	 * This database connection is used when
+	 * running PHPUnit database tests.
+	 *
+	 * @var array
+	 */
+	public $mybb = [
+		'DSN'          => '',
+		'hostname'     => 'localhost',
+		'username'     => 'bbreader',
+		'password'     => '',
+		'database'     => 'mybb',
+		'DBDriver'     => 'MySQLi',
+		'DBPrefix'     => '',
+		'pConnect'     => false,
+		'DBDebug'     => (ENVIRONMENT !== 'production'),
+		'cacheOn'     => false,
+		'cacheDir'     => '',
+		'charset'      => 'utf8',
+		'DBCollat'     => 'utf8_general_ci',
+		'swapPre'      => '',
+		'encrypt'      => false,
+		'compress'     => false,
+		'strictOn'     => false,
+		'failover'     => [],
+		'saveQueries' => true,
+	];
+
+
 	//--------------------------------------------------------------------
 
 	public function __construct()

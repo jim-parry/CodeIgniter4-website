@@ -1,5 +1,5 @@
 ##################################################
-Migrating From CI3 to CI4 - Part 2 - Confuguration
+Migrating From CI3 to CI4 - Part 2 - Configuration
 ##################################################
 
 We have a CodeIgniter4 website project, cloned locally and setup with the 
@@ -131,11 +131,101 @@ Those get reflected as properties in CI4::
 Configuration - Autoload
 ========================
 
+CI3 uses **application/config/autoload.php** to specify components to load
+automatically whenever a request comes into the webapp.
+Our website uses a few of those::
+
+    $autoload['libraries'] = array('parser');
+    $autoload['helper'] = array('url');
+
+The first says to load the **parser** library, and the second to load 
+the **url** helper. 
+
+The **application/Config/Config.php** file in CI4 serves a different purpose -
+specifying where to find components that are non-standard. We don't 
+need to do anything here, because we are using components built-in to the framework.
+
 Configuration - Constants
 =========================
 
+Our CI3 website specified a constant in **application/config/constants.php**::
+
+    // default date format
+    define('DATE_FORMAT', 'Y-m-d');
+
+We need to do the same thing for our CI4 website, in 
+**application/Config/Constants.php**::
+
+    // default date format
+    define('DATE_FORMAT', 'Y-m-d');
+
 Configuration - Database
 ========================
+
+The CodeIgniter website accesses the MyBB forum database, to retrieve the
+lasts announcements and posts. In CI3, that is part of
+**application/config/database.php**::
+
+    $db['mybb'] = array(
+        'dsn' => '',
+        'hostname' => 'localhost',
+        'username' => 'bbreader',
+        'password' => '',
+        'database' => 'mybb',
+        'dbdriver' => 'mysqli',
+        'dbprefix' => '',
+        'pconnect' => TRUE,
+        'db_debug' => TRUE,
+        'cache_on' => FALSE,
+        'cachedir' => '',
+        'char_set' => 'utf8',
+        'dbcollat' => 'utf8_general_ci',
+        'swap_pre' => '',
+        'autoinit' => TRUE,
+        'encrypt' => FALSE,
+        'compress' => FALSE,
+        'stricton' => FALSE,
+        'failover' => array(),
+        'save_queries' => TRUE
+    );
+
+The secret username and password are set inside **application/config/config/database.php**,
+and that won't be shared here!
+
+For CI4, the configuration is similar, in **application/Config/Database.php**::
+
+	/**
+	 * This database connection is used when
+	 * running PHPUnit database tests.
+	 *
+	 * @var array
+	 */
+	public $mybb = [
+		'DSN'          => '',
+		'hostname'     => 'localhost',
+		'username'     => 'bbreader',
+		'password'     => '',
+		'database'     => 'mybb',
+		'DBDriver'     => 'MySQLi',
+		'DBPrefix'     => '',
+		'pConnect'     => false,
+		'DBDebug'     => (ENVIRONMENT !== 'production'),
+		'cacheOn'     => false,
+		'cacheDir'     => '',
+		'charset'      => 'utf8',
+		'DBCollat'     => 'utf8_general_ci',
+		'swapPre'      => '',
+		'encrypt'      => false,
+		'compress'     => false,
+		'strictOn'     => false,
+		'failover'     => [],
+		'saveQueries' => true,
+	];
+
+For our testing, our model will use mock data, so you don't need to run
+MySQL. In CI4, the secret username and password are saved in **.env**, which is also
+not shared :)
+
 
 Configuration - Routes
 ======================
