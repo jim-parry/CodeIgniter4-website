@@ -165,6 +165,29 @@ class Services
 
 	//--------------------------------------------------------------------
 
+    /**
+     * Filters allow you to run tasks before and/or after a controller
+     * is executed. During before filters, the request can be modified,
+     * and actions taken based on the request, while after filters can
+     * act on or modify the response itself before it is sent to the client.
+     */
+    public static function filters($config = null, $getShared = true)
+    {
+        if ($getShared)
+        {
+            return self::getSharedInstance('filters', $config);
+        }
+
+        if (empty($config))
+        {
+            $config = new \Config\Filters();
+        }
+
+        return new \CodeIgniter\Filters\Filters($config, self::request(), self::response());
+    }
+
+    //--------------------------------------------------------------------
+
 	/**
 	 * The Iterator class provides a simple way of looping over a function
 	 * and timing the results and memory usage. Used when debugging and
@@ -181,6 +204,23 @@ class Services
 	}
 
 	//--------------------------------------------------------------------
+
+    /**
+     * Responsible for loading the language string translations.
+     */
+    public static function language(string $locale = null, $getShared = true)
+    {
+        if ($getShared)
+        {
+            return self::getSharedInstance('language', $locale);
+        }
+
+        $locale = ! empty($locale) ? $locale : self::request()->getLocale();
+
+        return new \CodeIgniter\Language\Language($locale);
+    }
+
+    //--------------------------------------------------------------------
 
 	/**
 	 * The file locator provides utility methods for looking for non-classes
@@ -251,6 +291,28 @@ class Services
 	}
 
 	//--------------------------------------------------------------------
+
+    public static function pager($config = null, RendererInterface $view = null, $getShared = true)
+    {
+        if ($getShared)
+        {
+            return self::getSharedInstance('pager', $config, $view);
+        }
+
+        if (empty($config))
+        {
+            $config = new Pager();
+        }
+
+        if (! $view instanceof RendererInterface)
+        {
+            $view = self::renderer();
+        }
+
+        return new \CodeIgniter\Pager\Pager($config, $view);
+    }
+
+    //--------------------------------------------------------------------
 
 	/**
 	 * The Renderer class is the class that actually displays a file to the user.

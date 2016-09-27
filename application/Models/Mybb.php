@@ -8,17 +8,17 @@ namespace App\Models;
  *
  * Can be configured by modifying application/config/mybb.php
  */
-class Mybb extends CodeIgniter\Model {
+class Mybb extends \CodeIgniter\Model {
 
 	/**
-	 * Are we running in mock mode? 
+	 * Are we running in mock mode?
 	 * If so, fake database results.
 	 * @var boolean
 	 */
 	protected $mock = false;
 
 	/**
-	 * Are we running in mock mode? 
+	 * Are we running in mock mode?
 	 * If so, fake database results.
 	 * @var array
 	 */
