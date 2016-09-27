@@ -5,7 +5,7 @@ namespace App\Controllers;
  * controllers/welcome.php
  *
  * Present the homepage.
- * 
+ *
  * CodeIgniter website, template driven
  *
  */
@@ -26,7 +26,7 @@ class Home extends Application {
 
 	function index()
 	{
-		$this->mybb = new App\Models\Mybb();
+		$this->mybb = new \App\Models\Mybb();
 
 		$this->data['title'] = '';
 		$this->data['pagetitle'] = 'CodeIgniter Web Framework';
@@ -34,7 +34,7 @@ class Home extends Application {
 
 		$this->data['biglinks'] = array(
 			array('icon' => 'download', 'link' => 'https://github.com/bcit-ci/CodeIgniter/archive/3.0.6.zip',
-				'label' => 'Download', 'text' => 'The latest is <b>Version ' . $this->config->item('stable_version') . '</b>'),
+				'label' => 'Download', 'text' => 'The latest is <b>Version ' . $this->config->stableVersion . '</b>'),
 			array('icon' => 'book', 'link' => 'https://www.codeigniter.com/user_guide',
 				'label' => 'Read the Manual', 'text' => 'Clear documentation'),
 			array('icon' => 'user', 'link' => 'http://forum.codeigniter.com',
@@ -116,7 +116,7 @@ class Home extends Application {
 			foreach ($items as &$item)
 			{
 				$item['dateline'] = date('Y.m.d', $item['dateline']);
-				$item['mybb_forum_url'] = $this->config->item('mybb_forum_url');
+				$item['mybb_forum_url'] = $this->config->mybbForumURL;
 				// escape the subject
 				$item['subject'] = htmlentities($item['subject']);
 				$item['subject'] = strip_tags($item['subject']); // fix #79
